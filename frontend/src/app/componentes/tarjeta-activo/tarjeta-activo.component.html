@@ -1,5 +1,8 @@
 <aside (click)="verDetalleActivo()">
-    <h3>{{ datosActivo.name }}</h3>
+    <div class="header-container">
+        <h3>{{ datosActivo.name }}</h3>
+        <app-button-favorito [symbol]="datosActivo.symbol"></app-button-favorito>
+    </div>
     <small>
         {{ datosActivo.symbol }}
         <sup class="{{monedaFiat()}}">{{ monedaFiat() }}</sup>

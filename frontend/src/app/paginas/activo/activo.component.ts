@@ -2,11 +2,13 @@ import {Component, computed, inject} from '@angular/core';
 import {GestorApiService} from "../../servicios/gestor-api.service";
 import {ActivatedRoute} from "@angular/router";
 import formatearMoneda from "../../logica/formatearMoneda";
+import { ButtonFavoritoComponent } from '../../componentes/button-favorito/button-favorito.component';
 
 @Component({
     selector: 'app-activo',
     templateUrl: './activo.component.html',
-    styleUrl: './activo.component.css'
+    styleUrl: './activo.component.css',
+    imports: [ButtonFavoritoComponent]
 })
 export class ActivoComponent {
     private route = inject(ActivatedRoute);

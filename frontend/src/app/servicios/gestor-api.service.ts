@@ -15,6 +15,8 @@ export class GestorApiService {
     URL_BASE = 'https://api.twelvedata.com';
     API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
+    simbolosFavoritos = signal<string[]>([]);
+
     monedaFiat = signal<MonedaFiat>('USD', {
         equal: (prev, next) => {
             if (next === "EUR" && prev !== next) {
@@ -85,5 +87,21 @@ export class GestorApiService {
         return this.http.get<EstadoMercado[]>(url).pipe(
             map(response => response[0])
         );
+    }
+
+    alternarAgregarComoFavorito(simbolo: string) {
+        const favoritos = this.simbolosFavoritos();
+        const esFavorito = favoritos.includes(simbolo);
+
+        if (!esFavorito) {
+            this.simbolosFavoritos.set([...favoritos, simbolo]);
+            return;
+        }
+        const nuevosFavoritos = favoritos.filter(s => s !== simbolo);
+        this.simbolosFavoritos.set(nuevosFavoritos);
+    }
+
+    esSimboloFavorito(simbolo: string): boolean {
+        return this.simbolosFavoritos().includes(simbolo);
     }
 }
