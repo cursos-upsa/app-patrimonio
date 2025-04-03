@@ -1,0 +1,9 @@
+# Ignore everything inside /backend/public
+/backend/public/*
+!.gitkeep
+
+# Ignore all .idea directories
+.idea/
+
+# Ignore all .DS_Store files
+.DS_Store

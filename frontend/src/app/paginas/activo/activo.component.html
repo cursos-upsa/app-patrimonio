@@ -1,0 +1,9 @@
+<h1>{{ simbolo }}</h1>
+@if (!precioUSD) {
+    <button (click)="buscarPrecio()">Ver precio</button>
+} @else {
+    <p>Precio actual: <strong>{{ precioString() }}</strong></p>
+    <!-- TODO: habilitar solo el botón de "Actualizar" si el mercado está abierto
+          si está cerrado añadirle un "disabled" y poner un title. -->
+    <button (click)="buscarPrecio()">Actualizar</button>
+}

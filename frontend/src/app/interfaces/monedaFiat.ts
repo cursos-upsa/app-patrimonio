@@ -1,0 +1,1 @@
+export type MonedaFiat = "USD" | "EUR";

@@ -1,0 +1,7 @@
+@if (!estadoMercado()) {
+    <button (click)="obtenerEstadoMercado()">Ver estado del mercado</button>
+}
+@if (estadoMercado()) {
+    <b>El mercado {{ nombreMercadoString() }} está {{ estadoMercadoString() }}.</b>
+    <div>{{ siguienteEventoString() }} en <code>{{ tiempoMercadoString() }}</code>.</div>
+}

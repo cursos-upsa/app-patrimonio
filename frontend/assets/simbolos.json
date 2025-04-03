@@ -1,0 +1,897 @@
+[
+  {
+    "data": [
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "currency": "USD",
+        "exchange": "BVS",
+        "mic_code": "XSGO",
+        "country": "Chile",
+        "type": "Common Stock",
+        "figi_code": "BBG0032FLQD2",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "currency": "CAD",
+        "exchange": "NEO",
+        "mic_code": "NEOE",
+        "country": "Canada",
+        "type": "Common Stock",
+        "figi_code": "BBG01293F5X4",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "currency": "PEN",
+        "exchange": "BVL",
+        "mic_code": "XLIM",
+        "country": "Peru",
+        "type": "Common Stock",
+        "figi_code": "BBG009S1W8D0",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "currency": "USD",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "country": "United States",
+        "type": "Common Stock",
+        "figi_code": "BBG000B9Y5X2",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "currency": "PLN",
+        "exchange": "GPW",
+        "mic_code": "XWAR",
+        "country": "Poland",
+        "type": "Common Stock",
+        "figi_code": "BBG01NX6JHN5",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc. CEDAR",
+        "currency": "ARS",
+        "exchange": "BCBA",
+        "mic_code": "XBUE",
+        "country": "Argentina",
+        "type": "Common Stock",
+        "figi_code": "BBG000S0MPB6",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "currency": "EUR",
+        "exchange": "VSE",
+        "mic_code": "XWBO",
+        "country": "Austria",
+        "type": "Common Stock",
+        "figi_code": "BBG00GQ6RZH7",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "currency": "MXN",
+        "exchange": "BMV",
+        "mic_code": "XMEX",
+        "country": "Mexico",
+        "type": "Common Stock",
+        "figi_code": "BBG000KWV4C0",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "currency": "COP",
+        "exchange": "BVC",
+        "mic_code": "XBOG",
+        "country": "Colombia",
+        "type": "Common Stock",
+        "figi_code": "BBG001BHSV80",
+        "cfi_code": "ESVUFR"
+      }
+    ],
+    "count": 9,
+    "status": "ok"
+  },
+  {
+    "data": [
+      {
+        "symbol": "NVDA",
+        "name": "Nvidia Corporation",
+        "currency": "USD",
+        "exchange": "BVS",
+        "mic_code": "XSGO",
+        "country": "Chile",
+        "type": "Common Stock",
+        "figi_code": "BBG01QSBFNB7",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "Nvidia Corporation",
+        "currency": "USD",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "country": "United States",
+        "type": "Common Stock",
+        "figi_code": "BBG000BBK0R0",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "Nvidia Corporation",
+        "currency": "USD",
+        "exchange": "BVL",
+        "mic_code": "XLIM",
+        "country": "Peru",
+        "type": "Common Stock",
+        "figi_code": "BBG00PXNQS61",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "Nvidia Corporation",
+        "currency": "PLN",
+        "exchange": "GPW",
+        "mic_code": "XWAR",
+        "country": "Poland",
+        "type": "Common Stock",
+        "figi_code": "BBG01NX6K372",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "Nvidia Corporation",
+        "currency": "EUR",
+        "exchange": "VSE",
+        "mic_code": "XWBO",
+        "country": "Austria",
+        "type": "Common Stock",
+        "figi_code": "BBG00GQ6S7X0",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "Nvidia Corporation",
+        "currency": "CAD",
+        "exchange": "NEO",
+        "mic_code": "NEOE",
+        "country": "Canada",
+        "type": "Common Stock",
+        "figi_code": "BBG014T46P08",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "Nvidia Corporation",
+        "currency": "MXN",
+        "exchange": "BMV",
+        "mic_code": "XMEX",
+        "country": "Mexico",
+        "type": "Common Stock",
+        "figi_code": "BBG001J8WB09",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corporation Cedear",
+        "currency": "ARS",
+        "exchange": "BCBA",
+        "mic_code": "XBUE",
+        "country": "Argentina",
+        "type": "Common Stock",
+        "figi_code": "BBG00P81VXD2",
+        "cfi_code": "ESVTFR"
+      }
+    ],
+    "count": 8,
+    "status": "ok"
+  },
+  {
+    "data": [
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corporation",
+        "currency": "ARS",
+        "exchange": "BCBA",
+        "mic_code": "XBUE",
+        "country": "Argentina",
+        "type": "Common Stock",
+        "figi_code": "BBG000FSR733",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corporation",
+        "currency": "MXN",
+        "exchange": "BMV",
+        "mic_code": "XMEX",
+        "country": "Mexico",
+        "type": "Common Stock",
+        "figi_code": "BBG000HSSV64",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "currency": "EUR",
+        "exchange": "VSE",
+        "mic_code": "XWBO",
+        "country": "Austria",
+        "type": "Common Stock",
+        "figi_code": "BBG00GQ6S788",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "currency": "USD",
+        "exchange": "BVS",
+        "mic_code": "XSGO",
+        "country": "Chile",
+        "type": "Common Stock",
+        "figi_code": "BBG0032FLQT5",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "LS 1X Microsoft Corporation",
+        "currency": "EUR",
+        "exchange": "Euronext",
+        "mic_code": "XAMS",
+        "country": "Netherlands",
+        "type": "Common Stock",
+        "figi_code": "BBG0113JLL65",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "currency": "PEN",
+        "exchange": "BVL",
+        "mic_code": "XLIM",
+        "country": "Peru",
+        "type": "Common Stock",
+        "figi_code": "BBG000BWDDM9",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "LS 1X Microsoft Corporation",
+        "currency": "GBp",
+        "exchange": "LSE",
+        "mic_code": "XLON",
+        "country": "United Kingdom",
+        "type": "Common Stock",
+        "figi_code": "BBG0113JK598",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "currency": "PLN",
+        "exchange": "GPW",
+        "mic_code": "XWAR",
+        "country": "Poland",
+        "type": "Common Stock",
+        "figi_code": "BBG01NX6JZV6",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "currency": "CAD",
+        "exchange": "NEO",
+        "mic_code": "NEOE",
+        "country": "Canada",
+        "type": "Common Stock",
+        "figi_code": "BBG012TB8DV7",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "currency": "USD",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "country": "United States",
+        "type": "Common Stock",
+        "figi_code": "BBG000BPHFS9",
+        "cfi_code": "ESVUFR"
+      }
+    ],
+    "count": 10,
+    "status": "ok"
+  },
+  {
+    "data": [
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "MXN",
+        "exchange": "BMV",
+        "mic_code": "XMEX",
+        "country": "Mexico",
+        "type": "Common Stock",
+        "figi_code": "BBG000D5YZ71",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "PEN",
+        "exchange": "BVL",
+        "mic_code": "XLIM",
+        "country": "Peru",
+        "type": "Common Stock",
+        "figi_code": "BBG000BB0NB9",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "CAD",
+        "exchange": "NEO",
+        "mic_code": "NEOE",
+        "country": "Canada",
+        "type": "Common Stock",
+        "figi_code": "BBG011XZ3MK8",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "ARS",
+        "exchange": "BCBA",
+        "mic_code": "XBUE",
+        "country": "Argentina",
+        "type": "Common Stock",
+        "figi_code": "BBG00P2FT6Y6",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Meezan Bank Ltd",
+        "currency": "PKR",
+        "exchange": "PSX",
+        "mic_code": "XKAR",
+        "country": "Pakistan",
+        "type": "Common Stock",
+        "figi_code": "",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Leveraged Shares 1x Amazon ETP",
+        "currency": "EUR",
+        "exchange": "Euronext",
+        "mic_code": "XAMS",
+        "country": "Netherlands",
+        "type": "Common Stock",
+        "figi_code": "BBG0113JLKF7",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "USD",
+        "exchange": "BVS",
+        "mic_code": "XSGO",
+        "country": "Chile",
+        "type": "Common Stock",
+        "figi_code": "BBG004BVT6X9",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "COP",
+        "exchange": "BVC",
+        "mic_code": "XBOG",
+        "country": "Colombia",
+        "type": "Common Stock",
+        "figi_code": "BBG001BJ2992",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Leveraged Shares 1x Amazon ETP",
+        "currency": "GBp",
+        "exchange": "LSE",
+        "mic_code": "XLON",
+        "country": "United Kingdom",
+        "type": "Common Stock",
+        "figi_code": "BBG0113JK4B8",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "PLN",
+        "exchange": "GPW",
+        "mic_code": "XWAR",
+        "country": "Poland",
+        "type": "Common Stock",
+        "figi_code": "BBG01NX6JDG2",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "USD",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "country": "United States",
+        "type": "Common Stock",
+        "figi_code": "BBG000BVQ4Z3",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc.",
+        "currency": "EUR",
+        "exchange": "VSE",
+        "mic_code": "XWBO",
+        "country": "Austria",
+        "type": "Common Stock",
+        "figi_code": "BBG00GQ6RYZ0",
+        "cfi_code": "ESVUFR"
+      }
+    ],
+    "count": 12,
+    "status": "ok"
+  },
+  {
+    "data": [
+      {
+        "symbol": "GOOG",
+        "name": "GO Accumulation Fund",
+        "currency": "EUR",
+        "exchange": "Euronext",
+        "mic_code": "XAMS",
+        "country": "Netherlands",
+        "type": "Common Stock",
+        "figi_code": "BBG0113JLLK9",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc.",
+        "currency": "MXN",
+        "exchange": "BMV",
+        "mic_code": "XMEX",
+        "country": "Mexico",
+        "type": "Common Stock",
+        "figi_code": "BBG00B4Z1N92",
+        "cfi_code": "ESNUFR"
+      },
+      {
+        "symbol": "GOOG",
+        "name": "GO Accumulation Fund",
+        "currency": "GBp",
+        "exchange": "LSE",
+        "mic_code": "XLON",
+        "country": "United Kingdom",
+        "type": "Common Stock",
+        "figi_code": "BBG0113JK5S7",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc.",
+        "currency": "USD",
+        "exchange": "BVS",
+        "mic_code": "XSGO",
+        "country": "Chile",
+        "type": "Common Stock",
+        "figi_code": "BBG00YJL3ZW2",
+        "cfi_code": "ESNUFR"
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc.",
+        "currency": "CAD",
+        "exchange": "NEO",
+        "mic_code": "NEOE",
+        "country": "Canada",
+        "type": "Common Stock",
+        "figi_code": "BBG012313B64",
+        "cfi_code": "ESNUFR"
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc.",
+        "currency": "USD",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "country": "United States",
+        "type": "Common Stock",
+        "figi_code": "BBG009S4MVF2",
+        "cfi_code": "ESNUFR"
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc.",
+        "currency": "PEN",
+        "exchange": "BVL",
+        "mic_code": "XLIM",
+        "country": "Peru",
+        "type": "Common Stock",
+        "figi_code": "BBG00SYQB1J8",
+        "cfi_code": "ESNUFR"
+      }
+    ],
+    "count": 7,
+    "status": "ok"
+  },
+  {
+    "data": [
+      {
+        "symbol": "META",
+        "name": "Metatech Health Ltd",
+        "currency": "PKR",
+        "exchange": "PSX",
+        "mic_code": "XKAR",
+        "country": "Pakistan",
+        "type": "Common Stock",
+        "figi_code": "",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc.",
+        "currency": "CAD",
+        "exchange": "NEO",
+        "mic_code": "NEOE",
+        "country": "Canada",
+        "type": "Common Stock",
+        "figi_code": "BBG012TB6KX1",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc.",
+        "currency": "MXN",
+        "exchange": "BMV",
+        "mic_code": "XMEX",
+        "country": "Mexico",
+        "type": "Common Stock",
+        "figi_code": "BBG003G0Q4Q0",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Nusantara Infrastructure Tbk",
+        "currency": "IDR",
+        "exchange": "IDX",
+        "mic_code": "XIDX",
+        "country": "Indonesia",
+        "type": "Common Stock",
+        "figi_code": "BBG000JS1MN2",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc.",
+        "currency": "PLN",
+        "exchange": "GPW",
+        "mic_code": "XWAR",
+        "country": "Poland",
+        "type": "Common Stock",
+        "figi_code": "BBG01NX6JWG0",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Metacon AB",
+        "currency": "SEK",
+        "exchange": "OMX",
+        "mic_code": "XSTO",
+        "country": "Sweden",
+        "type": "Common Stock",
+        "figi_code": "BBG00LXWVS73",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc.",
+        "currency": "USD",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "country": "United States",
+        "type": "Common Stock",
+        "figi_code": "BBG002GPKKZ7",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "WT Industrials Metals Enhanced Mutual Fund",
+        "currency": "USD",
+        "exchange": "LSE",
+        "mic_code": "XLON",
+        "country": "United Kingdom",
+        "type": "Common Stock",
+        "figi_code": "BBG00NDMTFV7",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms, Inc.",
+        "currency": "USD",
+        "exchange": "BVS",
+        "mic_code": "XSGO",
+        "country": "Chile",
+        "type": "Common Stock",
+        "figi_code": "",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc.",
+        "currency": "ARS",
+        "exchange": "BCBA",
+        "mic_code": "XBUE",
+        "country": "Argentina",
+        "type": "Common Stock",
+        "figi_code": "BBG00P1H8PY4",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc.",
+        "currency": "EUR",
+        "exchange": "VSE",
+        "mic_code": "XWBO",
+        "country": "Austria",
+        "type": "Common Stock",
+        "figi_code": "BBG00GQ6S378",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc.",
+        "currency": "PEN",
+        "exchange": "BVL",
+        "mic_code": "XLIM",
+        "country": "Peru",
+        "type": "Common Stock",
+        "figi_code": "BBG009STMY16",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Corporation Public Company Limited",
+        "currency": "THB",
+        "exchange": "SET",
+        "mic_code": "XBKK",
+        "country": "Thailand",
+        "type": "Common Stock",
+        "figi_code": "BBG000NDF259",
+        "cfi_code": "ESVTFR"
+      }
+    ],
+    "count": 13,
+    "status": "ok"
+  },
+  {
+    "data": [
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "EUR",
+        "exchange": "Euronext",
+        "mic_code": "XAMS",
+        "country": "Netherlands",
+        "type": "Common Stock",
+        "figi_code": "BBG0113JLK49",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "MXN",
+        "exchange": "BMV",
+        "mic_code": "XMEX",
+        "country": "Mexico",
+        "type": "Common Stock",
+        "figi_code": "BBG0060GVHG1",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "PEN",
+        "exchange": "BVL",
+        "mic_code": "XLIM",
+        "country": "Peru",
+        "type": "Common Stock",
+        "figi_code": "BBG00JGL1J38",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "USD",
+        "exchange": "BVS",
+        "mic_code": "XSGO",
+        "country": "Chile",
+        "type": "Common Stock",
+        "figi_code": "BBG01QVXZ844",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "PLN",
+        "exchange": "GPW",
+        "mic_code": "XWAR",
+        "country": "Poland",
+        "type": "Common Stock",
+        "figi_code": "BBG01LKT9DK6",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "CAD",
+        "exchange": "NEO",
+        "mic_code": "NEOE",
+        "country": "Canada",
+        "type": "Common Stock",
+        "figi_code": "BBG012313HP0",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "USD",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "country": "United States",
+        "type": "Common Stock",
+        "figi_code": "BBG000N9P426",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "ARS",
+        "exchange": "BCBA",
+        "mic_code": "XBUE",
+        "country": "Argentina",
+        "type": "Common Stock",
+        "figi_code": "BBG00PD5XJC7",
+        "cfi_code": "ESVTFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "GBp",
+        "exchange": "LSE",
+        "mic_code": "XLON",
+        "country": "United Kingdom",
+        "type": "Common Stock",
+        "figi_code": "BBG0113JK3L9",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "currency": "EUR",
+        "exchange": "VSE",
+        "mic_code": "XWBO",
+        "country": "Austria",
+        "type": "Common Stock",
+        "figi_code": "BBG00GQ6S9F6",
+        "cfi_code": "ESVUFR"
+      }
+    ],
+    "count": 10,
+    "status": "ok"
+  },
+  {
+    "data": [
+      {
+        "symbol": "NFLX",
+        "name": "Netflix Inc.",
+        "currency": "EUR",
+        "exchange": "VSE",
+        "mic_code": "XWBO",
+        "country": "Austria",
+        "type": "Common Stock",
+        "figi_code": "BBG00GQ6S7L3",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NFLX",
+        "name": "Netflix Inc.",
+        "currency": "USD",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "country": "United States",
+        "type": "Common Stock",
+        "figi_code": "BBG000CLD9D1",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NFLX",
+        "name": "Netflix Inc.",
+        "currency": "MXN",
+        "exchange": "BMV",
+        "mic_code": "XMEX",
+        "country": "Mexico",
+        "type": "Common Stock",
+        "figi_code": "BBG002S0Q880",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NFLX",
+        "name": "Netflix Inc.",
+        "currency": "PLN",
+        "exchange": "GPW",
+        "mic_code": "XWAR",
+        "country": "Poland",
+        "type": "Common Stock",
+        "figi_code": "BBG01NX6K1V9",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NFLX",
+        "name": "Netflix Inc.",
+        "currency": "USD",
+        "exchange": "BVS",
+        "mic_code": "XSGO",
+        "country": "Chile",
+        "type": "Common Stock",
+        "figi_code": "BBG01QS9XRJ5",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NFLX",
+        "name": "Netflix Inc.",
+        "currency": "ARS",
+        "exchange": "BCBA",
+        "mic_code": "XBUE",
+        "country": "Argentina",
+        "type": "Common Stock",
+        "figi_code": "BBG00PD5WBY1",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NFLX",
+        "name": "Netflix Inc.",
+        "currency": "PEN",
+        "exchange": "BVL",
+        "mic_code": "XLIM",
+        "country": "Peru",
+        "type": "Common Stock",
+        "figi_code": "BBG00MQLTDD2",
+        "cfi_code": "ESVUFR"
+      },
+      {
+        "symbol": "NFLX",
+        "name": "Netflix Inc.",
+        "currency": "CAD",
+        "exchange": "NEO",
+        "mic_code": "NEOE",
+        "country": "Canada",
+        "type": "Common Stock",
+        "figi_code": "BBG01293FBQ9",
+        "cfi_code": "ESVUFR"
+      }
+    ],
+    "count": 8,
+    "status": "ok"
+  }
+]
