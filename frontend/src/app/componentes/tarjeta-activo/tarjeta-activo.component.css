@@ -1,0 +1,8 @@
+sup {
+    &.USD {
+        background-color: darkgreen;
+    }
+    &.EUR {
+        background-color: darkblue;
+    }
+}

@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import {Component, computed, inject, Input, Signal} from '@angular/core';
 import { DatosActivo } from "../../interfaces/datosActivo";
 import { Router } from '@angular/router';
+import {GestorApiService} from "../../servicios/gestor-api.service";
 
 @Component({
     selector: 'app-tarjeta-activo',
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class TarjetaActivoComponent {
     @Input() datosActivo!: DatosActivo;
+    gestorApiService: GestorApiService = inject(GestorApiService);
+    monedaFiat = computed(() => this.gestorApiService.monedaFiat());
 
     constructor(private router: Router) {}
 

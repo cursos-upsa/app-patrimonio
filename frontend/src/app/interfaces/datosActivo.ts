@@ -6,5 +6,5 @@ export interface DatosActivo {
     mic_code: string;
     country: string;
     type: string;
-    figi_code: string
+    figi_code: string;
 }
