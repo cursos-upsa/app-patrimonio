@@ -8,6 +8,13 @@ sup {
     }
 }
 
+.cantidad-favorito {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #ff8c00;
+}
+
 header {
     display: flex;
     align-items: center;

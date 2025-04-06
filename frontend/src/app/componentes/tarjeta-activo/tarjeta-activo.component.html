@@ -6,5 +6,8 @@
     <small>
         {{ datosActivo.symbol }}
         <sup class="{{monedaFiat()}}">{{ monedaFiat() }}</sup>
+        <span *ngIf="esFavorito()" class="cantidad-favorito">
+            Cantidad: {{ obtenerCantidadFavorito() }}
+        </span>
     </small>
 </aside>

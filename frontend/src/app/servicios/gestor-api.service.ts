@@ -7,6 +7,7 @@ import {EstadoMercado} from "../interfaces/estadoMercado";
 import {DatosActivo} from "../interfaces/datosActivo";
 import {MonedaFiat} from "../interfaces/monedaFiat";
 import {Tema} from "../interfaces/tema";
+import {SimboloFavorito} from "../interfaces/simboloFavorito";
 
 @Injectable({
     providedIn: 'root',
@@ -16,10 +17,10 @@ export class GestorApiService {
     URL_BASE = 'https://api.twelvedata.com';
     API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
-    simbolosFavoritos = signal<string[]>([]);
+    simbolosFavoritos = signal<SimboloFavorito[]>([]);
     datosSimbolosFavoritos  = computed(() => {
         return this.obtenerDatosSimbolos().filter(simbolo =>
-            this.simbolosFavoritos().includes(simbolo.symbol));
+            this.simbolosFavoritos().some(fav => fav.symbol === simbolo.symbol));
     });
 
     monedaFiat = signal<MonedaFiat>('USD', {
@@ -98,17 +99,32 @@ export class GestorApiService {
 
     alternarAgregarComoFavorito(simbolo: string) {
         const favoritos = this.simbolosFavoritos();
-        const esFavorito = favoritos.includes(simbolo);
+        const esFavorito = favoritos.some(fav => fav.symbol === simbolo);
 
         if (!esFavorito) {
-            this.simbolosFavoritos.set([...favoritos, simbolo]);
+            const cantidadStr = prompt("Introduce la cantidad del activo:", "1");
+            if (cantidadStr === null) {
+                return; // El usuario canceló
+            }
+
+            const cantidad = Number(cantidadStr);
+            if (isNaN(cantidad)) {
+                return; // No es un número válido
+            }
+
+            this.simbolosFavoritos.set([...favoritos, { symbol: simbolo, cantidad }]);
             return;
         }
-        const nuevosFavoritos = favoritos.filter(s => s !== simbolo);
+        const nuevosFavoritos = favoritos.filter(fav => fav.symbol !== simbolo);
         this.simbolosFavoritos.set(nuevosFavoritos);
     }
 
     esSimboloFavorito(simbolo: string): boolean {
-        return this.simbolosFavoritos().includes(simbolo);
+        return this.simbolosFavoritos().some(fav => fav.symbol === simbolo);
+    }
+
+    obtenerCantidadFavorito(simbolo: string): number | undefined {
+        const favorito = this.simbolosFavoritos().find(fav => fav.symbol === simbolo);
+        return favorito?.cantidad;
     }
 }
