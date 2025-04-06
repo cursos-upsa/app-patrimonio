@@ -1,10 +1,5 @@
-.header-container {
+header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
-}
-
-.header-container h1 {
-    margin: 0;
+    gap: 1em;
 }
