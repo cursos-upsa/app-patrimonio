@@ -5,7 +5,10 @@
                 <a [routerLink]="['']">Dashboard</a>
             </li>
             <li>
-                <a [routerLink]="['favoritos']">Favoritos</a>
+                <a [routerLink]="['activos']">Activos</a>
+            </li>
+            <li>
+                <a [routerLink]="['activos/favoritos']">Favoritos</a>
                 <ul>
                     @for (simbolo of this.gestorApiService.datosSimbolosFavoritos(); track simbolo.symbol) {
                         <li>
