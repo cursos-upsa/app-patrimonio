@@ -1,12 +1,22 @@
 :host {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 25vw auto;
     height: 100vh;
+
+    > div {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow: hidden;
+    }
 
     header > div {
         display: flex;
         gap: 10px;
         justify-content: space-evenly;
         align-items: center;
+    }
+
+    main {
+        overflow: auto;
     }
 }

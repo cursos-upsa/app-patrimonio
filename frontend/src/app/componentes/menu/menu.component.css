@@ -1,4 +1,10 @@
-:host > nav {
-    display: flex;
-    gap: 10px;
+
+aside {
+    height: 100%;
+}
+
+nav {
+    background-color: var(--color-bg-secondary);
+    height: 100%;
+    padding: 5rem;
 }
