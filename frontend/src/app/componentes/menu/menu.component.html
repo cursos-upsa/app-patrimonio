@@ -15,7 +15,7 @@
                             <a [routerLink]="['activo', simbolo.symbol]">{{ simbolo.name }}</a>
                         </li>
                     } @empty {
-                        <li>
+                        <li class="mensaje-sin-favoritos">
                             No hay activos favoritos
                         </li>
                     }
