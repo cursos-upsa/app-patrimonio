@@ -20,7 +20,7 @@ button {
     }
 
     &.favorito span {
-        color: goldenrod;
+        color: var(--color-secondary);
     }
 }
 

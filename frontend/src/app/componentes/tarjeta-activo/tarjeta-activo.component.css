@@ -1,10 +1,10 @@
 sup {
     &.USD {
-        background-color: darkgreen;
+        background-color: #db9f0e;
     }
 
     &.EUR {
-        background-color: darkblue;
+        background-color: var(--color-link);
     }
 }
 
