@@ -10,10 +10,20 @@
     }
 
     header {
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: .5em;
         width: 100%;
-        justify-content: space-evenly;
+        height: 100%;
+
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow: 0 0 10px 2px inset var(--color-link);
+            border-radius: var(--border-radius);
+        }
     }
 
     main {
