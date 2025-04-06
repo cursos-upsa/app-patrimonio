@@ -5,17 +5,9 @@ import {TarjetaActivoComponent} from "../../componentes/tarjeta-activo/tarjeta-a
 
 @Component({
     selector: 'app-dashboard',
-    imports: [
-        TarjetaActivoComponent
-    ],
+    imports: [],
     templateUrl: './dashboard.component.html',
     styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-    gestorApiService: GestorApiService = inject(GestorApiService);
-    datosSimbolos: DatosActivo[] | null = null;
-
-    constructor() {
-        this.datosSimbolos = this.gestorApiService.obtenerSimbolosEjemplo();
-    }
 }

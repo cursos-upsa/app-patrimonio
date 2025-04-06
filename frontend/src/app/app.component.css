@@ -13,6 +13,8 @@
         display: grid;
         grid-template-columns: 1fr auto;
         gap: .5em;
+
+        padding-top: .75em;
         width: 100%;
         height: 100%;
 

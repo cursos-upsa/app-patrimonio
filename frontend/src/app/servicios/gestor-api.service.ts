@@ -6,6 +6,7 @@ import {ParametroApi} from '../interfaces/parametroApi';
 import {EstadoMercado} from "../interfaces/estadoMercado";
 import {DatosActivo} from "../interfaces/datosActivo";
 import {MonedaFiat} from "../interfaces/monedaFiat";
+import {Tema} from "../interfaces/tema";
 
 @Injectable({
     providedIn: 'root',
@@ -16,6 +17,10 @@ export class GestorApiService {
     API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
     simbolosFavoritos = signal<string[]>([]);
+    datosSimbolosFavoritos  = computed(() => {
+        return this.obtenerDatosSimbolos().filter(simbolo =>
+            this.simbolosFavoritos().includes(simbolo.symbol));
+    });
 
     monedaFiat = signal<MonedaFiat>('USD', {
         equal: (prev, next) => {
@@ -25,6 +30,8 @@ export class GestorApiService {
             return prev === next;
         }
     });
+
+    tema = signal<Tema>('claro');
     cambioDolarEuro = signal<number>(1);
     multiplicadorPrecio = computed(() => this.monedaFiat() === "USD" ? 1 : this.cambioDolarEuro());
 
@@ -43,7 +50,7 @@ export class GestorApiService {
         });
     }
 
-    obtenerSimbolosEjemplo(): DatosActivo[] {
+    obtenerDatosSimbolos(): DatosActivo[] {
         const simbolos: DatosActivo[] = [];
 
         simbolosJson.forEach(datos => {

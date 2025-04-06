@@ -1,0 +1,5 @@
+<section>
+    @for (activo of datosSimbolos; track activo?.symbol) {
+        <app-tarjeta-activo [datosActivo]="activo"/>
+    }
+</section>

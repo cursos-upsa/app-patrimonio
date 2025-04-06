@@ -5,6 +5,20 @@
                 <a [routerLink]="['']">Dashboard</a>
             </li>
             <li>
+                <a [routerLink]="['favoritos']">Favoritos</a>
+                <ul>
+                    @for (simbolo of this.gestorApiService.datosSimbolosFavoritos(); track simbolo.symbol) {
+                        <li>
+                            <a [routerLink]="['activo', simbolo.symbol]">{{ simbolo.name }}</a>
+                        </li>
+                    } @empty {
+                        <li>
+                            No hay activos favoritos
+                        </li>
+                    }
+                </ul>
+            </li>
+            <li>
                 <a [routerLink]="['preferencias']">Preferencias</a>
             </li>
         </ul>
