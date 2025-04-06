@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class TarjetaActivoComponent {
     @Input() datosActivo!: DatosActivo;
+    @Input() mostrarCantidad: boolean = false;
     gestorApiService: GestorApiService = inject(GestorApiService);
     monedaFiat = computed(() => this.gestorApiService.monedaFiat());
 

@@ -6,5 +6,5 @@ aside {
 nav {
     background-color: var(--color-bg-secondary);
     height: 100%;
-    padding: 5rem;
+    padding: 1em;
 }

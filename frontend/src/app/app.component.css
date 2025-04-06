@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 25vw auto;
     height: 100vh;
+    overflow: hidden;
 
     > div {
         display: grid;
@@ -15,7 +16,7 @@
         gap: .5em;
 
         padding-top: .75em;
-        width: 100%;
+        width: 95%;
         height: 100%;
 
         > div {
@@ -30,5 +31,6 @@
 
     main {
         overflow: auto;
+        margin-top: 25px;
     }
 }

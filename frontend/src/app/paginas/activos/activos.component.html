@@ -1,6 +1,6 @@
 <section>
     @for (activo of datosSimbolos; track activo?.symbol) {
-        <app-tarjeta-activo [datosActivo]="activo"/>
+        <app-tarjeta-activo [datosActivo]="activo" [mostrarCantidad]="esPaginaFavoritos"/>
     } @empty {
         <div>
             <h3>Aún no hay activos favoritos</h3>

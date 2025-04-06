@@ -17,6 +17,7 @@ export class ActivosComponent {
     gestorApiService: GestorApiService = inject(GestorApiService);
     router: Router = inject(Router);
     datosSimbolos: DatosActivo[] | null = null;
+    esPaginaFavoritos: boolean = false;
 
     constructor() {
         this.actualizarDatosSimbolos();
@@ -31,8 +32,10 @@ export class ActivosComponent {
         const url = this.router.url;
         if (url === '/activos/favoritos') {
             this.datosSimbolos = this.gestorApiService.datosSimbolosFavoritos();
+            this.esPaginaFavoritos = true;
             return;
         }
         this.datosSimbolos = this.gestorApiService.obtenerDatosSimbolos();
+        this.esPaginaFavoritos = false;
     }
 }
