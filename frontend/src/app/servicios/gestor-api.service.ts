@@ -75,11 +75,6 @@ export class GestorApiService {
         return nuevaUrl;
     }
 
-    obtenerInfoSimbolo(simbolo: string): Observable<DatosActivo> {
-        const url = this.crearUrl('stocks', [{nombre: 'symbol', valores: [simbolo]}]);
-        return this.http.get<DatosActivo>(url);
-    }
-
     obtenerPrecioUSDSimbolo(simbolo: string): Observable<number> {
         const url = this.crearUrl('price', [
             {nombre: 'symbol', valores: [simbolo]},
@@ -102,14 +97,14 @@ export class GestorApiService {
         const esFavorito = favoritos.some(fav => fav.symbol === simbolo);
 
         if (!esFavorito) {
-            const cantidadStr = prompt("Introduce la cantidad del activo:", "1");
-            if (cantidadStr === null) {
-                return; // El usuario canceló
+            const cantidadString = prompt("Introduce la cantidad del activo:", "1");
+            if (cantidadString === null) {
+                return;
             }
 
-            const cantidad = Number(cantidadStr);
+            const cantidad = Number(cantidadString);
             if (isNaN(cantidad)) {
-                return; // No es un número válido
+                return;
             }
 
             this.simbolosFavoritos.set([...favoritos, { symbol: simbolo, cantidad }]);
