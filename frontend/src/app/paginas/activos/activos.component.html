@@ -1,5 +1,12 @@
 <section>
     @for (activo of datosSimbolos; track activo?.symbol) {
         <app-tarjeta-activo [datosActivo]="activo"/>
+    } @empty {
+        <div>
+            <h3>Aún no hay activos favoritos</h3>
+            <p>
+                <a [routerLink]="['/activos']">Ir a la lista de activos</a>
+            </p>
+        </div>
     }
 </section>
