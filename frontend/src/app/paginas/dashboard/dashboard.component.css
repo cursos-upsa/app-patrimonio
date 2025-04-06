@@ -1,0 +1,6 @@
+.total, .mensaje-sin-favoritos {
+    margin-top: 20px;
+    padding: 3em;
+    background-color: #f9f9f9;
+    border-radius: var(--border-radius);
+}

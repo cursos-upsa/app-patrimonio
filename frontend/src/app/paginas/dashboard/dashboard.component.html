@@ -1,1 +1,56 @@
 <h3>Dashboard</h3>
+
+@if (datosSimbolosFavoritos().length > 0) {
+    <div class="tabla-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Símbolo</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (activo of datosSimbolosFavoritos(); track activo.symbol) {
+                    <tr>
+                        <td>{{ activo.symbol }}</td>
+                        <td>{{ activo.name }}</td>
+                        <td>{{ gestorApiService.obtenerCantidadFavorito(activo.symbol) }}</td>
+                        <td>
+                            @if (obtenerPrecio(activo.symbol)) {
+                                {{ formatearPrecio(obtenerPrecio(activo.symbol)) }}
+                            } @else {
+                                –
+                            }
+                        </td>
+                        <td>
+                            @if (calcularValor(activo.symbol)) {
+                                {{ formatearValor(calcularValor(activo.symbol)) }}
+                            } @else {
+                                –
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div>
+            <button (click)="buscarPrecios()">Buscar precios</button>
+        </div>
+        <div class="total">
+            <p>Valor total del patrimonio: 
+                @if (valorTotal()) {
+                    <strong>{{ valorTotalString() }}</strong>
+                } @else {
+                    <strong>–</strong>
+                }
+            </p>
+        </div>
+    </div>
+} @else {
+    <div class="mensaje-sin-favoritos">
+        <p>Aquí aparecerá el resumen de su patrimonio una vez añadidos activos a favoritos.</p>
+    </div>
+}
