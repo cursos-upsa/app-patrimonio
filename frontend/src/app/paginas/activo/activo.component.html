@@ -1,8 +1,8 @@
 <header>
-    <h1>{{ simbolo }}</h1>
-    <app-button-favorito [symbol]="simbolo"></app-button-favorito>
+    <h1>{{ simbolo() }}</h1>
+    <app-button-favorito [symbol]="simbolo()"></app-button-favorito>
 </header>
-@if (!precioUSD) {
+@if (!precioUSD()) {
     <button (click)="buscarPrecio()">Ver precio</button>
 } @else {
     <p>Precio actual: <strong>{{ precioString() }}</strong></p>
