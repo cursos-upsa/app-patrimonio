@@ -2,15 +2,17 @@
     <h1>{{ simbolo() }}</h1>
     <app-button-favorito [symbol]="simbolo()"></app-button-favorito>
 </header>
+@if (esFavorito()) {
+    <p>Cantidad: <strong>{{ obtenerCantidadFavorito() }}</strong></p>
+}
+
 @if (!precioUSD()) {
     <button (click)="buscarPrecio()">Ver precio</button>
 } @else {
     <p>Precio actual: <strong>{{ precioString() }}</strong></p>
+
     @if (esFavorito()) {
-        <p>Cantidad: <strong>{{ obtenerCantidadFavorito() }}</strong></p>
         <p>Valor total: <strong>{{ valorTotalString() }}</strong></p>
     }
-    <!-- TODO: habilitar solo el botón de "Actualizar" si el mercado está abierto
-          si está cerrado añadirle un "disabled" y poner un title. -->
     <button (click)="buscarPrecio()">Actualizar</button>
 }
