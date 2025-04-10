@@ -21,7 +21,7 @@ export class CambioMonedaComponent implements OnInit {
         this.form = this.fb.group({
             moneda: [this.monedaFiat()]
         });
-        
+
         this.form.get('moneda')?.valueChanges.subscribe((moneda) => {
             this.monedaFiat.set(moneda);
         });

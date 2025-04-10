@@ -1,6 +1,5 @@
 import {Component, computed, inject, signal} from '@angular/core';
 import {GestorApiService} from '../../servicios/gestor-api.service';
-import {DatosActivo} from "../../interfaces/datosActivo";
 import {CommonModule} from '@angular/common';
 import formatearMoneda from "../../logica/formatearMoneda";
 import {firstValueFrom} from 'rxjs';

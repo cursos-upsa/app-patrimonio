@@ -1,8 +1,8 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {TarjetaActivoComponent} from "../../componentes/tarjeta-activo/tarjeta-activo.component";
 import {GestorApiService} from "../../servicios/gestor-api.service";
 import {DatosActivo} from "../../interfaces/datosActivo";
-import {Router, NavigationEnd, RouterLink} from "@angular/router";
+import {NavigationEnd, Router, RouterLink} from "@angular/router";
 
 @Component({
     selector: 'app-activos-favoritos',

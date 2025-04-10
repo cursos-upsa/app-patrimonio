@@ -4,13 +4,13 @@
     <div class="tabla-container">
         <table>
             <thead>
-                <tr>
-                    <th>Símbolo</th>
-                    <th>Nombre</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Valor</th>
-                </tr>
+            <tr>
+                <th>Símbolo</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Valor</th>
+            </tr>
             </thead>
             <tbody>
                 @for (activo of datosSimbolosFavoritos(); track activo.symbol) {
@@ -40,7 +40,7 @@
             <button (click)="buscarPrecios()">Buscar precios</button>
         </div>
         <div class="total">
-            <p>Valor total del patrimonio: 
+            <p>Valor total del patrimonio:
                 @if (valorTotal()) {
                     <strong>{{ valorTotalString() }}</strong>
                 } @else {

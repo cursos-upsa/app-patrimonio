@@ -1,9 +1,9 @@
-import {Component, computed, inject, Input, Signal} from '@angular/core';
-import { DatosActivo } from "../../interfaces/datosActivo";
-import { Router } from '@angular/router';
+import {Component, computed, inject, Input} from '@angular/core';
+import {DatosActivo} from "../../interfaces/datosActivo";
+import {Router} from '@angular/router';
 import {GestorApiService} from "../../servicios/gestor-api.service";
-import { ButtonFavoritoComponent } from '../button-favorito/button-favorito.component';
-import { CommonModule } from '@angular/common';
+import {ButtonFavoritoComponent} from '../button-favorito/button-favorito.component';
+import {CommonModule} from '@angular/common';
 
 @Component({
     selector: 'app-tarjeta-activo',
@@ -18,7 +18,8 @@ export class TarjetaActivoComponent {
     gestorApiService: GestorApiService = inject(GestorApiService);
     monedaFiat = computed(() => this.gestorApiService.monedaFiat());
 
-    constructor(private router: Router) {}
+    constructor(private router: Router) {
+    }
 
     verDetalleActivo() {
         const activo = this.datosActivo.symbol.replaceAll('/', '-');

@@ -13,12 +13,10 @@ import {CommonModule} from '@angular/common';
     imports: [ButtonFavoritoComponent, CommonModule]
 })
 export class ActivoComponent {
-    private route = inject(ActivatedRoute);
-    private gestorApiService = inject(GestorApiService);
-
     simbolo = signal<string>('');
     precioUSD = signal<number | null>(null);
-
+    private route = inject(ActivatedRoute);
+    private gestorApiService = inject(GestorApiService);
     precioString = computed(() => {
         return formatearMoneda(this.precioUSD(), this.gestorApiService.multiplicadorPrecio(),
             this.gestorApiService.monedaFiat());

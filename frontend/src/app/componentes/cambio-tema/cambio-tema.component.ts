@@ -21,7 +21,7 @@ export class CambioTemaComponent implements OnInit {
         this.form = this.fb.group({
             tema: [this.tema()]
         });
-        
+
         this.form.get('tema')?.valueChanges.subscribe((tema) => {
             this.tema.set(tema);
         });

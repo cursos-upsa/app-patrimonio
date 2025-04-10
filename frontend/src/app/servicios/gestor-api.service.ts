@@ -18,7 +18,7 @@ export class GestorApiService {
     API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
     simbolosFavoritos = signal<SimboloFavorito[]>([]);
-    datosSimbolosFavoritos  = computed(() => {
+    datosSimbolosFavoritos = computed(() => {
         return this.obtenerDatosSimbolos().filter(simbolo =>
             this.simbolosFavoritos().some(fav => fav.symbol === simbolo.symbol));
     });
@@ -65,16 +65,6 @@ export class GestorApiService {
         return simbolos;
     }
 
-    private crearUrl(ambito: string, parametros: ParametroApi[]): string {
-        let nuevaUrl = `${this.URL_BASE}/${ambito}?apikey=${this.API_KEY_TWELVE_DATA}`;
-
-        parametros.forEach(parametro => {
-            nuevaUrl += `&${parametro.nombre}=${parametro.valores.join(',')}`;
-        });
-
-        return nuevaUrl;
-    }
-
     obtenerPrecioUSDSimbolo(simbolo: string): Observable<number> {
         const url = this.crearUrl('price', [
             {nombre: 'symbol', valores: [simbolo]},
@@ -107,7 +97,7 @@ export class GestorApiService {
                 return;
             }
 
-            this.simbolosFavoritos.set([...favoritos, { symbol: simbolo, cantidad }]);
+            this.simbolosFavoritos.set([...favoritos, {symbol: simbolo, cantidad}]);
             return;
         }
         const nuevosFavoritos = favoritos.filter(fav => fav.symbol !== simbolo);
@@ -121,5 +111,15 @@ export class GestorApiService {
     obtenerCantidadFavorito(simbolo: string): number | undefined {
         const favorito = this.simbolosFavoritos().find(fav => fav.symbol === simbolo);
         return favorito?.cantidad;
+    }
+
+    private crearUrl(ambito: string, parametros: ParametroApi[]): string {
+        let nuevaUrl = `${this.URL_BASE}/${ambito}?apikey=${this.API_KEY_TWELVE_DATA}`;
+
+        parametros.forEach(parametro => {
+            nuevaUrl += `&${parametro.nombre}=${parametro.valores.join(',')}`;
+        });
+
+        return nuevaUrl;
     }
 }

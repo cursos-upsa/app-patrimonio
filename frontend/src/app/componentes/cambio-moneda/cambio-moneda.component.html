@@ -1,11 +1,11 @@
 <form [formGroup]="form">
     Moneda fiat:
     <label>
-        <input type="radio" name="moneda" formControlName="moneda" value="USD">
+        <input formControlName="moneda" name="moneda" type="radio" value="USD">
         <span>USD</span>
     </label>
     <label>
-        <input type="radio" name="moneda" formControlName="moneda" value="EUR">
+        <input formControlName="moneda" name="moneda" type="radio" value="EUR">
         <span>EUR</span>
     </label>
 </form>
