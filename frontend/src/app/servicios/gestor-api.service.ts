@@ -16,7 +16,7 @@ export class GestorApiService {
     URL_TWELVE_DATA_BASE = 'https://api.twelvedata.com';
     API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
-    URL_BACKEND_BASE = 'http://localhost:8080';
+    URL_BACKEND_BASE = '';
     URL_BACKEND = `${this.URL_BACKEND_BASE}/api/patrimonio`;
 
     datosSimbolosCache: Observable<DatosActivo[]> | null = null;
