@@ -86,6 +86,21 @@ function patrimonioAPI(app) {
             siguiente(error);
         }
     });
+
+    // GET para obtener símbolos favoritos
+    // Ejemplo de llamada GET: http://localhost:8080/api/patrimonio/simbolos-favoritos
+    router.get("/simbolos-favoritos", async function (solicitud, respuesta, siguiente) {
+        try {
+            const simbolosFavoritos = await patrimonioService.getSimbolosFavoritos();
+            respuesta.status(200).json({
+                data: simbolosFavoritos,
+                message: "Símbolos favoritos recuperados con éxito."
+            });
+        } catch (error) {
+            console.error(`Ha habido un error: ${error}`);
+            siguiente(error);
+        }
+    });
 }
 
 module.exports = patrimonioAPI;

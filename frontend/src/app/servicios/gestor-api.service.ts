@@ -22,7 +22,9 @@ export class GestorApiService {
     datosSimbolosCache: Observable<DatosActivo[]> | null = null;
     datosSimbolosArray = signal<DatosActivo[]>([]);
 
+    simbolosFavoritosCache: Observable<SimboloFavorito[]> | null = null;
     simbolosFavoritos = signal<SimboloFavorito[]>([]);
+
     datosSimbolosFavoritos = computed(() => {
         return this.datosSimbolosArray().filter(simbolo =>
             this.simbolosFavoritos().some(fav => fav.symbol === simbolo.symbol));
@@ -71,14 +73,37 @@ export class GestorApiService {
                     this.datosSimbolosArray.set(simbolos);
                     return simbolos;
                 }),
+                shareReplay(1)
             );
         return this.datosSimbolosCache;
+    }
+
+    obtenerSimbolosFavoritos(): Observable<SimboloFavorito[]> {
+        if (this.simbolosFavoritosCache) {
+            return this.simbolosFavoritosCache;
+        }
+        this.simbolosFavoritosCache = this.http.get<{ data: SimboloFavorito[], message: string }>(`${this.URL_BACKEND}/simbolos-favoritos`)
+            .pipe(
+                map(response => {
+                    const favoritos = response.data;
+                    this.simbolosFavoritos.set(favoritos);
+                    return favoritos;
+                }),
+                shareReplay(1)
+            );
+        return this.simbolosFavoritosCache;
     }
 
     inicializarDatos() {
         this.obtenerDatosSimbolos().subscribe({
             error: (error) => {
                 console.error('Error al obtener los datos de símbolos:', error);
+            }
+        });
+
+        this.obtenerSimbolosFavoritos().subscribe({
+            error: (error) => {
+                console.error('Error al obtener los símbolos favoritos:', error);
             }
         });
     }

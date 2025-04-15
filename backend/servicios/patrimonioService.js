@@ -47,6 +47,15 @@ class PatrimonioService {
             throw error;
         }
     }
+
+    async getSimbolosFavoritos() {
+        try {
+            return await this.mongoDB.getDatos(this.coleccionSimbolosFavoritos);
+        } catch (error) {
+            console.log("Error al recuperar los símbolos favoritos", error);
+            throw error;
+        }
+    }
 }
 
 module.exports = PatrimonioService;

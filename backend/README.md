@@ -10,6 +10,14 @@ Obtener todos los datos de símbolos financieros.
 curl http://localhost:8080/api/patrimonio/datos-simbolos
 ```
 
+### GET /api/patrimonio/simbolos-favoritos
+
+Obtener todos los símbolos favoritos.
+
+```shell
+curl http://localhost:8080/api/patrimonio/simbolos-favoritos
+```
+
 ### POST /api/patrimonio/simbolos-favoritos
 
 Añadir un nuevo símbolo favorito.
