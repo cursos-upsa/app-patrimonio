@@ -1,5 +1,6 @@
 # Ignore everything inside /backend/public
 /backend/public/*
+/backend/node_modules
 !.gitkeep
 
 # Ignore all .idea directories
