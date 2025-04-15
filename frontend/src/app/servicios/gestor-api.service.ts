@@ -1,7 +1,6 @@
 import {computed, inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map, Observable} from 'rxjs';
-import simbolosJson from '../../../assets/simbolos.json';
+import {map, Observable, of, shareReplay} from 'rxjs';
 import {ParametroApi} from '../interfaces/parametroApi';
 import {EstadoMercado} from "../interfaces/estadoMercado";
 import {DatosActivo} from "../interfaces/datosActivo";
@@ -17,11 +16,21 @@ export class GestorApiService {
     URL_TWELVE_DATA_BASE = 'https://api.twelvedata.com';
     API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
+    URL_BACKEND_BASE = 'http://localhost:8080';
+    URL_BACKEND = `${this.URL_BACKEND_BASE}/api/patrimonio`;
+
+    datosSimbolosCache: Observable<DatosActivo[]> | null = null;
+    datosSimbolosArray = signal<DatosActivo[]>([]);
+
     simbolosFavoritos = signal<SimboloFavorito[]>([]);
     datosSimbolosFavoritos = computed(() => {
-        return this.obtenerDatosSimbolos().filter(simbolo =>
+        return this.datosSimbolosArray().filter(simbolo =>
             this.simbolosFavoritos().some(fav => fav.symbol === simbolo.symbol));
     });
+
+    constructor() {
+        this.inicializarDatos();
+    }
 
     monedaFiat = signal<MonedaFiat>('USD', {
         equal: (prev, next) => {
@@ -51,18 +60,27 @@ export class GestorApiService {
         });
     }
 
-    obtenerDatosSimbolos(): DatosActivo[] {
-        const simbolos: DatosActivo[] = [];
+    obtenerDatosSimbolos(): Observable<DatosActivo[]> {
+        if (this.datosSimbolosCache) {
+            return this.datosSimbolosCache;
+        }
+        this.datosSimbolosCache = this.http.get<{ data: DatosActivo[], message: string }>(`${this.URL_BACKEND}/datos-simbolos`)
+            .pipe(
+                map(response => {
+                    const simbolos = response.data;
+                    this.datosSimbolosArray.set(simbolos);
+                    return simbolos;
+                }),
+            );
+        return this.datosSimbolosCache;
+    }
 
-        simbolosJson.forEach(datos => {
-            datos.data.forEach(simbolo => {
-                if (simbolo.country === "United States" && simbolo.currency === "USD") {
-                    simbolos.push(simbolo);
-                    return;
-                }
-            });
+    inicializarDatos() {
+        this.obtenerDatosSimbolos().subscribe({
+            error: (error) => {
+                console.error('Error al obtener los datos de símbolos:', error);
+            }
         });
-        return simbolos;
     }
 
     obtenerPrecioUSDSimbolo(simbolo: string): Observable<number> {

@@ -35,7 +35,14 @@ export class ActivosComponent {
             this.esPaginaFavoritos = true;
             return;
         }
-        this.datosSimbolos = this.gestorApiService.obtenerDatosSimbolos();
-        this.esPaginaFavoritos = false;
+        this.gestorApiService.obtenerDatosSimbolos().subscribe({
+            next: (simbolos) => {
+                this.datosSimbolos = simbolos;
+                this.esPaginaFavoritos = false;
+            },
+            error: (error) => {
+                console.error('Error al obtener los datos de símbolos:', error);
+            }
+        });
     }
 }
