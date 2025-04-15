@@ -3,6 +3,11 @@
 /backend/node_modules
 !.gitkeep
 
+# Ignore environment files
+/backend/.env
+/backend/.env.*
+!/backend/.env.example
+
 # Ignore all .idea directories
 .idea/
 

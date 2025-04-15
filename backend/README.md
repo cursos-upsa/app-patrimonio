@@ -1,5 +1,13 @@
 # API de Patrimonio Financiero
 
+## Build
+
+Para hacer la build se ejecuta esto desde la carpeta root del proyecto:
+
+```shell
+cd frontend && npm install && npm run build && cd ../backend && npm install && mkdir -p public && cp -r ../frontend/dist/app-patrimonio/browser/* public/
+```
+
 ## Endpoints
 
 ### GET /api/patrimonio/datos-simbolos
