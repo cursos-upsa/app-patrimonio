@@ -9,6 +9,7 @@
         @if (mostrarCantidad && esFavorito()) {
             <p>
                 Cantidad: <strong>{{ obtenerCantidadFavorito() }}</strong>
+                <app-button-editar [symbol]="datosActivo.symbol"></app-button-editar>
             </p>
         }
     </small>

@@ -3,7 +3,10 @@
     <app-button-favorito [symbol]="simbolo()"></app-button-favorito>
 </header>
 @if (esFavorito()) {
-    <p>Cantidad: <strong>{{ obtenerCantidadFavorito() }}</strong></p>
+    <p>
+        Cantidad: <strong>{{ obtenerCantidadFavorito() }}</strong>
+        <app-button-editar [symbol]="simbolo()"></app-button-editar>
+    </p>
 }
 
 @if (!precioUSD()) {

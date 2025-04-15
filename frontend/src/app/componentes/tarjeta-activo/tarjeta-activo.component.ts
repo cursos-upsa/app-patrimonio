@@ -3,14 +3,14 @@ import {DatosActivo} from "../../interfaces/datosActivo";
 import {Router} from '@angular/router';
 import {GestorApiService} from "../../servicios/gestor-api.service";
 import {ButtonFavoritoComponent} from '../button-favorito/button-favorito.component';
+import {ButtonEditarComponent} from '../button-editar/button-editar.component';
 import {CommonModule} from '@angular/common';
 
 @Component({
     selector: 'app-tarjeta-activo',
     templateUrl: './tarjeta-activo.component.html',
     styleUrl: './tarjeta-activo.component.css',
-    standalone: true,
-    imports: [ButtonFavoritoComponent, CommonModule]
+    imports: [ButtonFavoritoComponent, ButtonEditarComponent, CommonModule]
 })
 export class TarjetaActivoComponent {
     @Input() datosActivo!: DatosActivo;
@@ -33,4 +33,5 @@ export class TarjetaActivoComponent {
     obtenerCantidadFavorito(): number | undefined {
         return this.gestorApiService.obtenerCantidadFavorito(this.datosActivo.symbol);
     }
+
 }

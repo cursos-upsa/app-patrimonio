@@ -3,6 +3,7 @@ import {GestorApiService} from "../../servicios/gestor-api.service";
 import {ActivatedRoute} from "@angular/router";
 import formatearMoneda from "../../logica/formatearMoneda";
 import {ButtonFavoritoComponent} from '../../componentes/button-favorito/button-favorito.component';
+import {ButtonEditarComponent} from '../../componentes/button-editar/button-editar.component';
 import {firstValueFrom} from 'rxjs';
 import {CommonModule} from '@angular/common';
 
@@ -10,7 +11,7 @@ import {CommonModule} from '@angular/common';
     selector: 'app-activo',
     templateUrl: './activo.component.html',
     styleUrl: './activo.component.css',
-    imports: [ButtonFavoritoComponent, CommonModule]
+    imports: [ButtonFavoritoComponent, ButtonEditarComponent, CommonModule]
 })
 export class ActivoComponent {
     simbolo = signal<string>('');
@@ -58,4 +59,5 @@ export class ActivoComponent {
     obtenerCantidadFavorito(): number | undefined {
         return this.gestorApiService.obtenerCantidadFavorito(this.simbolo());
     }
+
 }

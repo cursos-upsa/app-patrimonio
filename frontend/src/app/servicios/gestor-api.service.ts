@@ -182,6 +182,29 @@ export class GestorApiService {
         return favorito?.cantidad;
     }
 
+    actualizarCantidadFavorito(simbolo: string, nuevaCantidad: number) {
+        const favoritos = this.simbolosFavoritos();
+        if (!this.esSimboloFavorito(simbolo)) {
+            console.error(`El símbolo ${simbolo} no es favorito`);
+            return;
+        }
+
+        this.http.put(`${this.URL_BACKEND}/simbolos-favoritos/${simbolo}`, { cantidad: nuevaCantidad })
+            .subscribe({
+                next: () => {
+                    console.log(`Cantidad del símbolo ${simbolo} actualizada a ${nuevaCantidad}`);
+                    this.simbolosFavoritosCache = null;
+                    const nuevosFavoritos = favoritos.map(fav => 
+                        fav.symbol === simbolo ? { ...fav, cantidad: nuevaCantidad } : fav
+                    );
+                    this.simbolosFavoritos.set(nuevosFavoritos);
+                },
+                error: (error) => {
+                    console.error(`Error al actualizar la cantidad del símbolo ${simbolo}:`, error);
+                }
+            });
+    }
+
     private crearUrl(ambito: string, parametros: ParametroApi[]): string {
         let nuevaUrl = `${this.URL_TWELVE_DATA_BASE}/${ambito}?apikey=${this.API_KEY_TWELVE_DATA}`;
 
