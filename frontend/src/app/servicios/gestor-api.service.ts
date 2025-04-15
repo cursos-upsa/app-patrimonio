@@ -14,7 +14,7 @@ import {SimboloFavorito} from "../interfaces/simboloFavorito";
 })
 export class GestorApiService {
     http = inject(HttpClient);
-    URL_BASE = 'https://api.twelvedata.com';
+    URL_TWELVE_DATA_BASE = 'https://api.twelvedata.com';
     API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
     simbolosFavoritos = signal<SimboloFavorito[]>([]);
@@ -114,7 +114,7 @@ export class GestorApiService {
     }
 
     private crearUrl(ambito: string, parametros: ParametroApi[]): string {
-        let nuevaUrl = `${this.URL_BASE}/${ambito}?apikey=${this.API_KEY_TWELVE_DATA}`;
+        let nuevaUrl = `${this.URL_TWELVE_DATA_BASE}/${ambito}?apikey=${this.API_KEY_TWELVE_DATA}`;
 
         parametros.forEach(parametro => {
             nuevaUrl += `&${parametro.nombre}=${parametro.valores.join(',')}`;
