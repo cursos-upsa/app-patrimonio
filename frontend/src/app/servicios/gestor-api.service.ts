@@ -66,14 +66,16 @@ export class GestorApiService {
         if (this.datosSimbolosCache) {
             return this.datosSimbolosCache;
         }
-        this.datosSimbolosCache = this.http.get<{ data: DatosActivo[], message: string }>(`${this.URL_BACKEND}/datos-simbolos`)
+        this.datosSimbolosCache = this.http.get<{
+            data: DatosActivo[],
+            message: string
+        }>(`${this.URL_BACKEND}/datos-simbolos`)
             .pipe(
                 map(response => {
                     const simbolos = response.data;
                     this.datosSimbolosArray.set(simbolos);
                     return simbolos;
                 }),
-                shareReplay(1)
             );
         return this.datosSimbolosCache;
     }
@@ -82,14 +84,16 @@ export class GestorApiService {
         if (this.simbolosFavoritosCache) {
             return this.simbolosFavoritosCache;
         }
-        this.simbolosFavoritosCache = this.http.get<{ data: SimboloFavorito[], message: string }>(`${this.URL_BACKEND}/simbolos-favoritos`)
+        this.simbolosFavoritosCache = this.http.get<{
+            data: SimboloFavorito[],
+            message: string
+        }>(`${this.URL_BACKEND}/simbolos-favoritos`)
             .pipe(
                 map(response => {
                     const favoritos = response.data;
                     this.simbolosFavoritos.set(favoritos);
                     return favoritos;
-                }),
-                shareReplay(1)
+                })
             );
         return this.simbolosFavoritosCache;
     }
@@ -140,11 +144,33 @@ export class GestorApiService {
                 return;
             }
 
-            this.simbolosFavoritos.set([...favoritos, {symbol: simbolo, cantidad}]);
+            const nuevoFavorito = {symbol: simbolo, cantidad};
+            this.http.post(`${this.URL_BACKEND}/simbolos-favoritos`, nuevoFavorito)
+                .subscribe({
+                    next: () => {
+                        console.log(`Símbolo ${simbolo} añadido a favoritos`);
+                        this.simbolosFavoritosCache = null;
+                        this.simbolosFavoritos.set([...favoritos, nuevoFavorito]);
+                    },
+                    error: (error) => {
+                        console.error(`Error al añadir el símbolo ${simbolo} a favoritos:`, error);
+                    }
+                });
             return;
         }
-        const nuevosFavoritos = favoritos.filter(fav => fav.symbol !== simbolo);
-        this.simbolosFavoritos.set(nuevosFavoritos);
+
+        this.http.delete(`${this.URL_BACKEND}/simbolos-favoritos/${simbolo}`)
+            .subscribe({
+                next: () => {
+                    console.log(`Símbolo ${simbolo} eliminado de favoritos`);
+                    this.simbolosFavoritosCache = null;
+                    const nuevosFavoritos = favoritos.filter(fav => fav.symbol !== simbolo);
+                    this.simbolosFavoritos.set(nuevosFavoritos);
+                },
+                error: (error) => {
+                    console.error(`Error al eliminar el símbolo ${simbolo} de favoritos:`, error);
+                }
+            });
     }
 
     esSimboloFavorito(simbolo: string): boolean {
