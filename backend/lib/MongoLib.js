@@ -1,9 +1,12 @@
 const {MongoClient} = require('mongodb')
 
-const DB_NAME = 'app_patrimonio'
-const DB_USER = 'enrique'
-const DB_PASSWORD = 'cQZ2R6jufLnlIr1n'
-const MONGO_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.uwalp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+const DB_NAME = process.env.DB_NAME;
+const MONGO_URI = process.env.MONGO_URI;
+const API_KEY_TWELVE_DATA = process.env.API_KEY_TWELVE_DATA;
+
+if (!DB_NAME || !MONGO_URI || !API_KEY_TWELVE_DATA) {
+    throw new Error('Faltan variables de entorno!.');
+}
 
 class MongoLib {
     async connect() {
