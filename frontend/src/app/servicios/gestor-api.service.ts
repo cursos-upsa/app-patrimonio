@@ -1,4 +1,4 @@
-import {computed, inject, Injectable, signal} from '@angular/core';
+import {computed, inject, Injectable, isDevMode, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map, Observable} from 'rxjs';
 import {EstadoMercado} from "../interfaces/estadoMercado";
@@ -13,8 +13,7 @@ import {SimboloFavorito} from "../interfaces/simboloFavorito";
 export class GestorApiService {
     http = inject(HttpClient);
 
-    // ¡IMPORTANTE! En desarrollo la URL_BACKEND_BASE debe ser `http://localhost:8080`.
-    URL_BACKEND_BASE = '';
+    URL_BACKEND_BASE = isDevMode() ? 'http://localhost:8080' : '';
     URL_BACKEND = `${this.URL_BACKEND_BASE}/api/patrimonio`;
     URL_TWELVEDATA_BACKEND = `${this.URL_BACKEND_BASE}/api/twelvedata`;
 
