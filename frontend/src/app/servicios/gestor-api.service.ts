@@ -16,6 +16,7 @@ export class GestorApiService {
     URL_TWELVE_DATA_BASE = 'https://api.twelvedata.com';
     API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
+    // ¡IMPORTANTE! En desarrollo la URL_BACKEND_BASE debe ser `http://localhost:8080`.
     URL_BACKEND_BASE = '';
     URL_BACKEND = `${this.URL_BACKEND_BASE}/api/patrimonio`;
 

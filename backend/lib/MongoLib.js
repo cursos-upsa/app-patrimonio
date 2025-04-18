@@ -1,15 +1,17 @@
 const {MongoClient} = require('mongodb')
 
-const DB_NAME = process.env.DB_NAME;
-const MONGO_URI = process.env.MONGO_URI;
-const API_KEY_TWELVE_DATA = process.env.API_KEY_TWELVE_DATA;
-
-if (!DB_NAME || !MONGO_URI || !API_KEY_TWELVE_DATA) {
-    throw new Error('Faltan variables de entorno!.');
-}
-
 class MongoLib {
     async connect() {
+        const DB_NAME = process.env.DB_NAME;
+        const MONGO_URI = process.env.MONGO_URI;
+
+        if (!DB_NAME) {
+            throw new Error('Falta la variable de entorno DB_NAME.');
+        }
+        if (!MONGO_URI) {
+            throw new Error('Falta la variable de entorno MONGO_URI.');
+        }
+
         if (MongoLib.connection != null) {
             return MongoLib.connection.db(DB_NAME)
         }

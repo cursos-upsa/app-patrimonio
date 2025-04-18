@@ -4,9 +4,9 @@
 !.gitkeep
 
 # Ignore environment files
-/backend/.env
-/backend/.env.*
-!/backend/.env.example
+/.env
+/.env.example
+!/.env.example
 
 # Ignore all .idea directories
 .idea/
