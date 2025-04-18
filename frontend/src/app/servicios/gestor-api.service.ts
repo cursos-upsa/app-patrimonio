@@ -1,7 +1,6 @@
 import {computed, inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map, Observable, of, shareReplay} from 'rxjs';
-import {ParametroApi} from '../interfaces/parametroApi';
+import {map, Observable} from 'rxjs';
 import {EstadoMercado} from "../interfaces/estadoMercado";
 import {DatosActivo} from "../interfaces/datosActivo";
 import {MonedaFiat} from "../interfaces/monedaFiat";
@@ -13,12 +12,11 @@ import {SimboloFavorito} from "../interfaces/simboloFavorito";
 })
 export class GestorApiService {
     http = inject(HttpClient);
-    URL_TWELVE_DATA_BASE = 'https://api.twelvedata.com';
-    API_KEY_TWELVE_DATA = "32bfee0e890c481c80189a34d97fa5b4";
 
     // ¡IMPORTANTE! En desarrollo la URL_BACKEND_BASE debe ser `http://localhost:8080`.
-    URL_BACKEND_BASE = '';
+    URL_BACKEND_BASE = 'http://localhost:8080';
     URL_BACKEND = `${this.URL_BACKEND_BASE}/api/patrimonio`;
+    URL_TWELVEDATA_BACKEND = `${this.URL_BACKEND_BASE}/api/twelvedata`;
 
     datosSimbolosCache: Observable<DatosActivo[]> | null = null;
     datosSimbolosArray = signal<DatosActivo[]>([]);
@@ -49,9 +47,9 @@ export class GestorApiService {
     multiplicadorPrecio = computed(() => this.monedaFiat() === "USD" ? 1 : this.cambioDolarEuro());
 
     asignarCambioDolarEuro() {
-        const url = this.crearUrl('exchange_rate', [{nombre: 'symbol', valores: ['USD/EUR']}]);
-        this.http.get<{ rate: string }>(url).pipe(
-            map(response => parseFloat(response.rate))
+        const url = `${this.URL_TWELVEDATA_BACKEND}/exchange-rate/usd-eur`;
+        this.http.get<{ rate: number, message: string }>(url).pipe(
+            map(response => response.rate)
         ).subscribe({
             next: (rate) => {
                 console.log(`Cambio de dolar a euro: ${rate}`);
@@ -114,20 +112,15 @@ export class GestorApiService {
     }
 
     obtenerPrecioUSDSimbolo(simbolo: string): Observable<number> {
-        const url = this.crearUrl('price', [
-            {nombre: 'symbol', valores: [simbolo]},
-            {nombre: 'currency', valores: [this.monedaFiat()]}
-        ]);
-        return this.http.get<{ price: string }>(url).pipe(
-            map(response => parseFloat(response.price))
+        const url = `${this.URL_TWELVEDATA_BACKEND}/price/${simbolo}/${this.monedaFiat()}`;
+        return this.http.get<{ price: number, message: string }>(url).pipe(
+            map(response => response.price)
         );
     }
 
     obtenerEstadoMercado() {
-        const url = this.crearUrl('market_state', [{nombre: 'code', valores: ['XNGS']}]);
-        return this.http.get<EstadoMercado[]>(url).pipe(
-            map(response => response[0])
-        );
+        const url = `${this.URL_TWELVEDATA_BACKEND}/market-state`;
+        return this.http.get<EstadoMercado>(url);
     }
 
     alternarAgregarComoFavorito(simbolo: string) {
@@ -206,13 +199,4 @@ export class GestorApiService {
             });
     }
 
-    private crearUrl(ambito: string, parametros: ParametroApi[]): string {
-        let nuevaUrl = `${this.URL_TWELVE_DATA_BASE}/${ambito}?apikey=${this.API_KEY_TWELVE_DATA}`;
-
-        parametros.forEach(parametro => {
-            nuevaUrl += `&${parametro.nombre}=${parametro.valores.join(',')}`;
-        });
-
-        return nuevaUrl;
-    }
 }

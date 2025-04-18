@@ -9,10 +9,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 const patrimonioAPI = require('./rutas/patrimonio.js')
+const twelveDataAPI = require('./rutas/twelveData.js')
+
 patrimonioAPI(app)
+twelveDataAPI(app)
 
 app.use(express.static(path.join(__dirname, 'public')))
 
 const server = app.listen('8080', () => {
-    console.log(`servidor escuchando en ${server.address().port}`)
+    console.log(`Servidor escuchando en el puerto: ${server.address().port}`)
 });
