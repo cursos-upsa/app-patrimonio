@@ -34,10 +34,6 @@ header > div:first-child {
 header > div:last-child {
     padding-right: 1em;
     height: 60px;
-
-    button {
-        padding: .5em 1em;
-    }
 }
 
 header h1 {
